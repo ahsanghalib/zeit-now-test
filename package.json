@@ -1,0 +1,20 @@
+{
+  "name": "zeit-now-test",
+  "version": "1.0.0",
+  "description": "test project zeit now",
+  "main": "api/index.ts",
+  "repository": "https://github.com/ahsanghalib/zeit-now-test.git",
+  "author": "M Ahsan Izhar <ahsanghalib@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.6",
+    "@types/node": "^13.13.0",
+    "nodeman": "^1.1.2",
+    "tslint": "^6.1.1",
+    "tslint-config-airbnb": "^5.11.2",
+    "typescript": "^3.8.3"
+  }
+}

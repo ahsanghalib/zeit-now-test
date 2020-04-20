@@ -1,1 +1,6 @@
+/node_modules
 .idea
+.now
+
+yarn-error.log
+yarn.lock
