@@ -9,6 +9,6 @@ routes.get(`/`, (req: Request, res: Response) => {
 })
 
 routes.get(`/hello/:name`, testMiddleware, controller.helloWorld)
-routes.get(`/test/:name`, testMiddleware, controller.helloWorld)
+routes.get(`/test`, controller.testQuery)
 
 export default routes
