@@ -1,22 +1,25 @@
-import express from 'express'
+import express, { Request, Response } from 'express'
+import cors from 'cors'
+import { errorMiddleware } from './middlewares'
+import routes from './routes'
 
 const app = express()
-const port = 5000;
 
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }))
 
-const routes = express.Router()
+// all routes
+app.use('/api', routes, cors())
 
-routes.get("/api/", (req, res) => {
-    res.status(200).json({message: 'Root'})
+// global not found
+app.use((req: Request, res: Response) => {
+  res
+    .status(404)
+    .json({
+      message: ['Request resource not found.'],
+      url: req.originalUrl,
+    })
 })
 
-routes.get("/api/hello", (req, res) => {
-    res.status(200).json({message: 'Hello World'})
-})
-
-app.use(routes)
+app.use(errorMiddleware)
 
 export default app
-
-

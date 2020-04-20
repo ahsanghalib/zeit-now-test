@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "test-api",
   "builds": [
     {
       "src": "/api/**/*.ts",
@@ -9,17 +8,13 @@
   ],
   "routes": [
     {
-      "src": "/api",
+      "src": "/api/(.*)",
       "dest": "/api/index.ts",
       "methods": [
-        "GET"
-      ]
-    },
-    {
-      "src": "/api/hello",
-      "dest": "/api/index.ts",
-      "methods": [
-        "GET"
+        "GET",
+        "POST",
+        "DELETE",
+        "PUT"
       ]
     }
   ]
